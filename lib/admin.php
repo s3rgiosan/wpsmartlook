@@ -143,7 +143,7 @@ class Admin {
 		\register_setting(
 			$this->get_settings_name(),
 			'smartlook_snippet',
-			'esc_html'
+			'htmlentities'
 		);
 
 		\add_settings_field(
@@ -167,9 +167,9 @@ class Admin {
 	public function display_snippet() {
 
 		printf(
-			'<textarea rows="10" cols="80" id="%1$s" name="%1$s">%2$s</textarea>',
+			'<textarea rows="10" id="%1$s" name="%1$s" class="widefat" style="font-family: Courier New;">%2$s</textarea>',
 			'smartlook_snippet',
-			\esc_html( \get_option( 'smartlook_snippet' ) )
+			\get_option( 'smartlook_snippet' )
 		);
 
 		printf(
