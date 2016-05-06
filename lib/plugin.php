@@ -97,7 +97,7 @@ class Plugin {
 	 */
 	private function define_frontend_hooks() {
 		$frontend = new Frontend( $this );
-		\add_action( 'wp_head', array( $frontend, 'add_script' ), 99 );
+		\add_action( 'wp_head', array( $frontend, 'add_snippet' ), 99 );
 	}
 
 	/**

@@ -47,7 +47,7 @@ class Frontend {
 	 *
 	 * @since 1.0.0
 	 */
-	public function add_script() {
+	public function add_snippet() {
 
 		if ( \is_admin() ) {
 			return;
