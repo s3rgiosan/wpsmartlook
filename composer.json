@@ -1,0 +1,32 @@
+{
+  "name": "s3rgiosan/wpsmartlook",
+  "description": "Easy integration of Smartlook into your WordPress website.",
+  "type": "wordpress-plugin",
+  "keywords": ["wordpress", "plugin"],
+  "homepage": "https://github.com/s3rgiosan/wpsmartlook",
+  "license": "GPL-2.0+",
+  "authors": [
+    {
+      "name": "Sérgio Santos",
+      "email": "me@s3rgiosan.com",
+      "homepage": "https://github.com/s3rgiosan"
+    }
+  ],
+  "support": {
+    "issues": "https://github.com/s3rgiosan/wpsmartlook/issues",
+    "source": "https://github.com/s3rgiosan/wpsmartlook"
+  },
+  "autoload": {
+    "psr-4": {
+      "s3rgiosan\\Smartlook\\": "lib/"
+    }
+  },
+  "autoload-dev": {
+    "psr-4": {
+      "s3rgiosan\\Tests\\Smartlook\\": "tests/"
+    }
+  },
+  "require-dev": {
+    "dangoodman/composer-for-wordpress": "^1.0"
+  }
+}
