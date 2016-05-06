@@ -160,7 +160,7 @@ class Admin {
 	}
 
 	/**
-	 * Output the RUM ID field.
+	 * Output the snippet field.
 	 *
 	 * @since 1.0.0
 	 */
