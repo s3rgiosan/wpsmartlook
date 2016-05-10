@@ -41,6 +41,9 @@ Navigate to the 'Smartlook' settings page under the Settings menu and paste your
 
 ## Changelog ##
 
+### 1.0.1 ###
+* Bug fix. 
+
 ### 1.0.0 ###
 * Initial release.  
 

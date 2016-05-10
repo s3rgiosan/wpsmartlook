@@ -71,6 +71,6 @@ class Frontend {
 			return;
 		}
 
-		echo html_entity_decode( $snippet );
+		echo $snippet;
 	}
 }

@@ -143,7 +143,7 @@ class Admin {
 		\register_setting(
 			$this->get_settings_name(),
 			'smartlook_snippet',
-			'htmlentities'
+			''
 		);
 
 		\add_settings_field(
