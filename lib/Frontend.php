@@ -65,6 +65,13 @@ class Frontend {
 			return;
 		}
 
+		$disable_recording = boolval( \get_post_meta( \get_the_id(), 'smartlook_disable_rec', true ) );
+
+		// Disable recording for this content type
+		if ( $disable_recording ) {
+			return;
+		}
+
 		$snippet = trim( \get_option( 'smartlook_snippet' ) );
 
 		if ( empty( $snippet ) ) {

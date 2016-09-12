@@ -2,8 +2,8 @@
 Contributors: s3rgiosan  
 Tags: smartlook, user, behavior, interaction, testing, feedback, support, recording  
 Requires at least: 4.0  
-Tested up to: 4.5  
-Stable tag: 1.0.2 
+Tested up to: 4.6  
+Stable tag: 1.1.0 
 License: GPLv2 or later  
 License URI: http://www.gnu.org/licenses/gpl-2.0.html  
 
@@ -41,8 +41,11 @@ Navigate to the 'Smartlook' settings page under the Settings menu and paste your
 
 == Changelog ==
 
+= 1.1.0 =
+* Disable recording for specific content types.  
+
 = 1.0.2 =
-* Check if current user can 'manage_options'  
+* Check if current user can 'manage_options'.  
 
 = 1.0.1 =
 * Bug fix. 

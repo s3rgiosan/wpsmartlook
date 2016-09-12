@@ -79,13 +79,16 @@ class Plugin {
 	 * Register all of the hooks related to the dashboard functionality
 	 * of the plugin.
 	 *
+	 * @since  1.1.0 Disable recording for specific content types.
 	 * @since  1.0.0
 	 * @access private
 	 */
 	private function define_admin_hooks() {
 		$admin = new Admin( $this );
-		\add_action( 'admin_menu', array( $admin, 'admin_settings_menu' ) );
-		\add_action( 'admin_init', array( $admin, 'admin_settings_init' ) );
+		\add_action( 'admin_menu',     array( $admin, 'admin_settings_menu' ) );
+		\add_action( 'admin_init',     array( $admin, 'admin_settings_init' ) );
+		\add_action( 'add_meta_boxes', array( $admin, 'register_settings' ) );
+		\add_action( 'save_post',      array( $admin, 'save_settings' ) );
 	}
 
 	/**
