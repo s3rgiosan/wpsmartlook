@@ -61,6 +61,39 @@ class Plugin {
 	}
 
 	/**
+	 * Load the dependencies, define the locale, and set the hooks for the Dashboard and
+	 * the public-facing side of the site.
+	 *
+	 * @since 1.0.0
+	 */
+	public function run() {
+		$this->set_locale();
+		$this->define_admin_hooks();
+		$this->define_frontend_hooks();
+	}
+
+	/**
+	 * The name of the plugin used to uniquely identify it within the context of
+	 * WordPress and to define internationalization functionality.
+	 *
+	 * @since  1.0.0
+	 * @return string The name of the plugin.
+	 */
+	public function get_name() {
+		return $this->name;
+	}
+
+	/**
+	 * Retrieve the version number of the plugin.
+	 *
+	 * @since  1.0.0
+	 * @return string The version number of the plugin.
+	 */
+	public function get_version() {
+		return $this->version;
+	}
+
+	/**
 	 * Define the locale for this plugin for internationalization.
 	 *
 	 * Uses the I18n class in order to set the domain and to register the hook
@@ -101,38 +134,5 @@ class Plugin {
 	private function define_frontend_hooks() {
 		$frontend = new Frontend( $this );
 		\add_action( 'wp_head', array( $frontend, 'add_snippet' ), 99 );
-	}
-
-	/**
-	 * Load the dependencies, define the locale, and set the hooks for the Dashboard and
-	 * the public-facing side of the site.
-	 *
-	 * @since 1.0.0
-	 */
-	public function run() {
-		$this->set_locale();
-		$this->define_admin_hooks();
-		$this->define_frontend_hooks();
-	}
-
-	/**
-	 * The name of the plugin used to uniquely identify it within the context of
-	 * WordPress and to define internationalization functionality.
-	 *
-	 * @since  1.0.0
-	 * @return string The name of the plugin.
-	 */
-	public function get_name() {
-		return $this->name;
-	}
-
-	/**
-	 * Retrieve the version number of the plugin.
-	 *
-	 * @since  1.0.0
-	 * @return string The version number of the plugin.
-	 */
-	public function get_version() {
-		return $this->version;
 	}
 }

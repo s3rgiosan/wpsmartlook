@@ -3,7 +3,7 @@ Contributors: s3rgiosan
 Tags: smartlook, user, behavior, interaction, testing, feedback, support, recording  
 Requires at least: 4.0  
 Tested up to: 4.6  
-Stable tag: 1.1.0 
+Stable tag: 1.1.1 
 License: GPLv2 or later  
 License URI: http://www.gnu.org/licenses/gpl-2.0.html  
 
@@ -40,6 +40,9 @@ Navigate to the 'Smartlook' settings page under the Settings menu and paste your
 4. Activate the plugin in the Plugin dashboard
 
 == Changelog ==
+
+= 1.1.1 =
+* Minor changes. 
 
 = 1.1.0 =
 * Disable recording for specific content types.  
