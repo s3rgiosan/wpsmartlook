@@ -8,7 +8,10 @@ module.exports = function (grunt) {
     pluginSlug:  'wpsmartlook',
     mainFile:    'wpsmartlook',
     textDomain:  'wpsmartlook',
-    potFilename: 'wpsmartlook'
+    potFilename: 'wpsmartlook',
+    badges:      {
+      codacy: '[![Codacy Badge](https://api.codacy.com/project/badge/Grade/59b57a96cc6340ec8ceb65a3fea6f639)](https://www.codacy.com/app/s3rgiosan/wpsmartlook?utm_source=github.com&amp;utm_medium=referral&amp;utm_content=s3rgiosan/wpsmartlook&amp;utm_campaign=Badge_Grade)',
+    },
   };
 
   var distFiles = [
@@ -33,7 +36,6 @@ module.exports = function (grunt) {
     '!tests/**',
   ];
 
-  // Project configuration
   grunt.initConfig({
 
     pkg: pkg,
@@ -112,9 +114,18 @@ module.exports = function (grunt) {
 
     wp_readme_to_markdown: {
       main: {
-          files: {
-            'README.md': 'README.txt'
+        files: {
+          'README.md': 'README.txt'
+        },
+        options: {
+          post_convert: function(readme) {
+            var badges = '';
+            Object.keys(config.badges).forEach(function(key) {
+              badges += config.badges[key] + "\n";
+            });
+            return badges + "\n" + readme;
           },
+        },
       },
     },
 
@@ -124,7 +135,6 @@ module.exports = function (grunt) {
       ]
     },
 
-    // Copy the plugin to build directory
     copy: {
       main: {
         expand: true,
@@ -158,10 +168,15 @@ module.exports = function (grunt) {
 
   });
 
-  // Load tasks
   require('load-grunt-tasks')(grunt);
 
-  // Register tasks
+  grunt.registerTask('default', [
+    'clean',
+    'composer:install',
+    'pot',
+    'readme',
+  ]);
+
   grunt.registerTask('readme', [
     'wp_readme_to_markdown',
   ]);
@@ -172,8 +187,6 @@ module.exports = function (grunt) {
   ]);
 
   grunt.registerTask('build', [
-    'readme',
-    'pot',
     'composer:install:no-dev',
     'composer:dump-autoload:optimize:no-dev',
     'clean',
@@ -184,9 +197,11 @@ module.exports = function (grunt) {
   ]);
 
   grunt.registerTask('deploy', [
+    'pot',
+    'readme',
     'build',
     'wp_deploy',
+    'clean',
   ]);
 
-  grunt.util.linefeed = '\n';
 };
