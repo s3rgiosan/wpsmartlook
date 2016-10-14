@@ -10,7 +10,11 @@ module.exports = function (grunt) {
     textDomain:  'wpsmartlook',
     potFilename: 'wpsmartlook',
     badges:      {
-      codacy: '[![Codacy Badge](https://api.codacy.com/project/badge/Grade/59b57a96cc6340ec8ceb65a3fea6f639)](https://www.codacy.com/app/s3rgiosan/wpsmartlook?utm_source=github.com&amp;utm_medium=referral&amp;utm_content=s3rgiosan/wpsmartlook&amp;utm_campaign=Badge_Grade)',
+      packagist_stable:    '[![Latest Stable Version](https://poser.pugx.org/s3rgiosan/wpsmartlook/v/stable)](https://packagist.org/packages/s3rgiosan/wpsmartlook)',
+      packagist_downloads: '[![Total Downloads](https://poser.pugx.org/s3rgiosan/wpsmartlook/downloads)](https://packagist.org/packages/s3rgiosan/wpsmartlook)',
+      packagist_license:   '[![License](https://poser.pugx.org/s3rgiosan/wpsmartlook/license)](https://packagist.org/packages/s3rgiosan/wpsmartlook)',
+      codacy_grade:        '[![Codacy Badge](https://api.codacy.com/project/badge/Grade/59b57a96cc6340ec8ceb65a3fea6f639)](https://www.codacy.com/app/s3rgiosan/wpsmartlook?utm_source=github.com&amp;utm_medium=referral&amp;utm_content=s3rgiosan/wpsmartlook&amp;utm_campaign=Badge_Grade)',
+      codeclimate_grade:   '[![Code Climate](https://codeclimate.com/github/s3rgiosan/wpsmartlook/badges/gpa.svg)](https://codeclimate.com/github/s3rgiosan/wpsmartlook)',
     },
   };
 
