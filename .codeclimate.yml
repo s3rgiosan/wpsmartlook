@@ -19,6 +19,10 @@ engines:
         enabled: false
       Controversial/CamelCaseMethodName:
         enabled: false
+      Controversial/CamelCaseParameterName:
+        enabled: false
+      Controversial/CamelCasePropertyName:
+        enabled: false
   eslint:
     enabled: true
 ratings:
