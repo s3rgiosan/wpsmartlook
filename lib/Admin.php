@@ -211,7 +211,7 @@ class Admin {
 			 * @return array Possibly-modified name(s) of the post type(s).
 			 */
 			$post_types = \apply_filters( 'wpsmartlook_post_types', \get_post_types( array(
-				'public'=> true,
+				'public' => true,
 			) ) );
 
 			\wp_cache_set( 'wpsmartlook_post_types', $post_types, $this->plugin->get_name(), 600 );
