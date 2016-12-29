@@ -2,7 +2,10 @@
   "name": "s3rgiosan/wpsmartlook",
   "description": "Easy integration of Smartlook into your WordPress website.",
   "type": "wordpress-plugin",
-  "keywords": ["wordpress", "plugin"],
+  "keywords": [
+    "wordpress",
+    "plugin"
+  ],
   "homepage": "https://github.com/s3rgiosan/wpsmartlook",
   "license": "GPL-2.0+",
   "authors": [

@@ -235,7 +235,7 @@ class Admin {
 	 */
 	public function display_settings( $post ) {
 
-		\wp_nonce_field( \plugin_basename( __FILE__ ), 'settings_meta_box_nonce' );
+		\wp_nonce_field( \plugin_basename( __FILE__ ), 'smartlook_settings_meta_box_nonce' );
 
 		echo '<table class="form-table"><tbody>';
 		$this->display_disable_fields( $post );
@@ -273,8 +273,8 @@ class Admin {
 	public function save_settings( $post_id ) {
 
 		// Verify meta box nonce
-		if ( ! isset( $_POST['settings_meta_box_nonce'] ) ||
-			! \wp_verify_nonce( $_POST['settings_meta_box_nonce'], \plugin_basename( __FILE__ ) ) ) {
+		if ( ! isset( $_POST['smartlook_settings_meta_box_nonce'] ) ||
+			! \wp_verify_nonce( $_POST['smartlook_settings_meta_box_nonce'], \plugin_basename( __FILE__ ) ) ) {
 			return;
 		}
 

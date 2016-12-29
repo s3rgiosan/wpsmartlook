@@ -1,23 +1,23 @@
 === Smartlook ===
-Contributors: s3rgiosan  
-Tags: smartlook, user, behavior, interaction, testing, feedback, support, recording  
-Requires at least: 4.0  
-Tested up to: 4.6  
-Stable tag: 1.1.3 
-License: GPLv2 or later  
-License URI: http://www.gnu.org/licenses/gpl-2.0.html  
+Contributors: s3rgiosan
+Tags: smartlook, user, behavior, interaction, testing, feedback, support, recording
+Requires at least: 4.0
+Tested up to: 4.7
+Stable tag: 1.1.4
+License: GPLv2 or later
+License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
-Easy integration of Smartlook into your WordPress website.  
+Easy integration of Smartlook into your WordPress website.
 
 == Description ==
 
 [Smartlook](https://www.getsmartlook.com) records everything visitors do on your site.
 
-This plugin allows you to easily integrate Smartlook into your WordPress website.  
+This plugin allows you to easily integrate Smartlook into your WordPress website.
 
 = Usage =
 
-Navigate to the 'Smartlook' settings page under the Settings menu and paste your snippet.  
+Navigate to the 'Smartlook' settings page under the Settings menu and paste your snippet.
 
 == Installation ==
 
@@ -49,31 +49,34 @@ Join in on our [GitHub repository](https://github.com/s3rgiosan/wpsmartlook) and
 
 == Changelog ==
 
+= 1.1.4 =
+* Fix meta box nonce key.
+
 = 1.1.3 =
-* Added Code Climate integration.  
+* Added Code Climate integration.
 * Added moar badges (yes I am a badge poser).
-* Added contribution guidelines.  
-* Updated README. 
+* Added contribution guidelines.
+* Updated README.
 
 = 1.1.2 =
-* Added Codacy (a tool for automated code review) badge.  
+* Added Codacy (a tool for automated code review) badge.
 
 = 1.1.1 =
-* Minor changes. 
+* Minor changes.
 
 = 1.1.0 =
-* Disable recording for specific content types.  
+* Disable recording for specific content types.
 
 = 1.0.2 =
-* Check if current user can 'manage_options'.  
+* Check if current user can 'manage_options'.
 
 = 1.0.1 =
-* Bug fix. 
+* Bug fix.
 
 = 1.0.0 =
-* Initial release.  
+* Initial release.
 
 == Upgrade Notice ==
 
-= 1.0 =  
-Initial release.  
+= 1.0 =
+Initial release.
