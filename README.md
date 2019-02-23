@@ -9,7 +9,7 @@
 **Tags:** smartlook, user, behavior, interaction, testing, recording, heatmaps, conversion, funnels, tracking  
 **Requires at least:** 4.0  
 **Tested up to:** 5.1  
-**Stable tag:** 1.2.0  
+**Stable tag:** 1.2.1  
 **License:** GPLv2 or later  
 **License URI:** http://www.gnu.org/licenses/gpl-2.0.html  
 
@@ -64,6 +64,9 @@ Yes. You can sign up for a free Smartlook account [here](https://www.smartlook.c
 Visit the Smartlook [website](https://www.smartlook.com/) to learn more about Smartlook and how you can use it to start gaining insights into how users use your website.
 
 ## Changelog ##
+
+### 1.2.1 ###
+* Fix dependencies.
 
 ### 1.2.0 ###
 * Tested with WordPress 5.1.

@@ -4,7 +4,7 @@
  * Plugin Name:       Smartlook
  * Plugin URI:        https://github.com/s3rgiosan/wpsmartlook/
  * Description:       Easy integration of Smartlook into your WordPress website.
- * Version:           1.2.0
+ * Version:           1.2.1
  * Author:            Sérgio Santos
  * Author URI:        https://s3rgiosan.com/
  * License:           GPL-2.0+
@@ -34,7 +34,7 @@ define( 'WPSMARTLOOK_PLUGIN_FILE', \plugin_basename( __FILE__ ) );
 \add_action(
 	'plugins_loaded',
 	function () {
-		$plugin = new s3rgiosan\WP\Plugin\Smartlook\Plugin( 'wpsmartlook', '1.2.0' );
+		$plugin = new s3rgiosan\WP\Plugin\Smartlook\Plugin( 'wpsmartlook', '1.2.1' );
 		$plugin->run();
 	}
 );
