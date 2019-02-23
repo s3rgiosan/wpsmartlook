@@ -1,6 +1,5 @@
 # Dependencies #
 ################
-vendor/
 node_modules/
 
 # Build directories #
