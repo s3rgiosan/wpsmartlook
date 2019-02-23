@@ -1,18 +1,6 @@
 <?php
-/**
- * The file that defines the core plugin class
- *
- * A class definition that includes attributes and functions used across both the
- * public-facing side of the site and the dashboard.
- *
- * @link       https://github.com/s3rgiosan/wpsmartlook/
- * @since      1.0.0
- *
- * @package    Smartlook
- * @subpackage Smartlook/lib
- */
 
-namespace s3rgiosan\Smartlook;
+namespace s3rgiosan\WP\Plugin\Smartlook;
 
 /**
  * The core plugin class.
@@ -23,10 +11,7 @@ namespace s3rgiosan\Smartlook;
  * Also maintains the unique identifier of this plugin as well as the current
  * version of the plugin.
  *
- * @since      1.0.0
- * @package    Smartlook
- * @subpackage Smartlook/lib
- * @author     Sérgio Santos <me@s3rgiosan.com>
+ * @since   1.0.0
  */
 class Plugin {
 
@@ -52,8 +37,8 @@ class Plugin {
 	 * Define the core functionality of the plugin.
 	 *
 	 * @since 1.0.0
-	 * @param string $name    Plugin name.
-	 * @param string $version Plugin version.
+	 * @param string $name    The plugin identifier.
+	 * @param string $version Current version of the plugin.
 	 */
 	public function __construct( $name, $version ) {
 		$this->name    = $name;
@@ -61,8 +46,10 @@ class Plugin {
 	}
 
 	/**
-	 * Load the dependencies, define the locale, and set the hooks for the Dashboard and
-	 * the public-facing side of the site.
+	 * Run the loader to execute all the hooks with WordPress.
+	 *
+	 * Load the dependencies, define the locale, and set the hooks for the
+	 * Dashboard and the public-facing side of the site.
 	 *
 	 * @since 1.0.0
 	 */
@@ -84,7 +71,7 @@ class Plugin {
 	}
 
 	/**
-	 * Retrieve the version number of the plugin.
+	 * Returns the version number of the plugin.
 	 *
 	 * @since  1.0.0
 	 * @return string The version number of the plugin.
@@ -112,16 +99,18 @@ class Plugin {
 	 * Register all of the hooks related to the dashboard functionality
 	 * of the plugin.
 	 *
-	 * @since  1.1.0 Disable recording for specific content types.
 	 * @since  1.0.0
 	 * @access private
 	 */
 	private function define_admin_hooks() {
-		$admin = new Admin( $this );
-		\add_action( 'admin_menu',     array( $admin, 'admin_settings_menu' ) );
-		\add_action( 'admin_init',     array( $admin, 'admin_settings_init' ) );
-		\add_action( 'add_meta_boxes', array( $admin, 'register_settings' ) );
-		\add_action( 'save_post',      array( $admin, 'save_settings' ) );
+
+		$components = [
+			'admin' => new Admin( $this ),
+		];
+
+		foreach ( $components as $component ) {
+			$component->register();
+		}
 	}
 
 	/**
@@ -132,7 +121,13 @@ class Plugin {
 	 * @access private
 	 */
 	private function define_frontend_hooks() {
-		$frontend = new Frontend( $this );
-		\add_action( 'wp_head', array( $frontend, 'add_snippet' ), 99 );
+
+		$components = [
+			'frontend' => new Frontend( $this ),
+		];
+
+		foreach ( $components as $component ) {
+			$component->register();
+		}
 	}
 }

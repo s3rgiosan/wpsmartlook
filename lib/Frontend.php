@@ -1,25 +1,11 @@
 <?php
-/**
- * The public-facing functionality of the plugin.
- *
- * @link       https://github.com/s3rgiosan/wpsmartlook/
- * @since      1.0.0
- *
- * @package    Smartlook
- * @subpackage Smartlook/lib
- */
 
-namespace s3rgiosan\Smartlook;
+namespace s3rgiosan\WP\Plugin\Smartlook;
 
 /**
  * The public-facing functionality of the plugin.
  *
- * Defines the plugin name, version, and two examples hooks for how to
- * enqueue the dashboard-specific stylesheet and JavaScript.
- *
- * @package    Smartlook
- * @subpackage Smartlook/lib
- * @author     Sérgio Santos <me@s3rgiosan.com>
+ * @since   1.0.0
  */
 class Frontend {
 
@@ -28,7 +14,7 @@ class Frontend {
 	 *
 	 * @since  1.0.0
 	 * @access private
-	 * @var    Plugin $plugin This plugin's instance.
+	 * @var    Plugin
 	 */
 	private $plugin;
 
@@ -43,8 +29,18 @@ class Frontend {
 	}
 
 	/**
+	 * Register hooks.
+	 *
+	 * @since 1.0.0
+	 */
+	public function register() {
+		\add_action( 'wp_head', [ $this, 'add_snippet' ], 99 );
+	}
+
+	/**
 	 * Add custom javascript within head section.
 	 *
+	 * @since 1.2.0 Sanitize snippet code.
 	 * @since 1.0.0
 	 */
 	public function add_snippet() {
@@ -65,19 +61,34 @@ class Frontend {
 			return;
 		}
 
-		$disable_recording = boolval( \get_post_meta( \get_the_id(), 'smartlook_disable_rec', true ) );
-
-		// Disable recording for this content type
-		if ( $disable_recording ) {
+		// Is recording disabled for this content type?
+		if ( $this->is_recording_disabled( \get_the_id() ) ) {
 			return;
 		}
 
 		$snippet = trim( \get_option( 'smartlook_snippet' ) );
-
 		if ( empty( $snippet ) ) {
 			return;
 		}
 
-		echo $snippet;
+		echo \wp_kses(
+			$snippet,
+			[
+				'script' => [
+					'async' => [],
+					'src'   => [],
+				],
+			]
+		);
+	}
+
+	/**
+	 * Check if the recording is disabled for a specific post ID.
+	 *
+	 * @param  int $post_id The post ID.
+	 * @return bool
+	 */
+	public function is_recording_disabled( $post_id ) {
+		return boolval( \get_post_meta( $post_id, 'smartlook_disable_rec', true ) );
 	}
 }
