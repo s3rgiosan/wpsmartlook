@@ -35,11 +35,13 @@ Pull requests are welcome on [Github](https://github.com/s3rgiosan/wpsmartlook).
 2. Search for "wpsmartlook", and then click "Install Now".
 2. Click "Activate".
 
-### Manual Alternatives ###
+### FTP ###
 
 1. Download and extract the .zip file.
 2. Upload the unzipped folder to the `/wp-content/plugins/` directory.
 3. Activate the plugin through the 'Plugins' menu.
+
+### Composer ###
 
 `composer require s3rgiosan/wpsmartlook`
 
