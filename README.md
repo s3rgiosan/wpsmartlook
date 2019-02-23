@@ -23,6 +23,8 @@ This plugin allows you to easily integrate [Smartlook](https://www.smartlook.com
 
 Pull requests are welcome on [Github](https://github.com/s3rgiosan/wpsmartlook).
 
+[](http://coderisk.com/wp/plugin/wpsmartlook/RIPS-Se-sTWOrax)
+
 ### Features: ###
 
 * Disable snippet code on specific posts, pages and custom post types
